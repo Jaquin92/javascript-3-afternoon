@@ -29,9 +29,21 @@
   Call your class Employee and receive all the data in the constructor in the order listed above.
 */
 
+class Employee {
+  constructor(first_name, last_name, email, age) {
+    this.age = age;
+    this.email = email;
+    this.first_name = first_name;
+    this.last_name = last_name;
+  }
+  makeWidget() {
+    return this.first_name + " " + this.last_name + " Widget";
+  }
+}
+
+var jon = new Employee();
+
 //Code Here
-
-
 
 ////////// PROBLEM 2 //////////
 
@@ -46,12 +58,27 @@
     - fire (index)
       - Fire removes employees from their list of reports at the given index
 
+
+
   Call your new class Manager
 */
 
+class Manager {
+  constructor(first_name, last_name, email, age) {
+    this.age = age;
+    this.email = email;
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.reports = [];
+  }
+  hire(newEmp) {
+    this.reports.push(newEmp);
+  }
+  fire(i) {
+    this.reports.splice(i, 1);
+  }
+}
 //Code Here
-
-
 
 ////////// PROBLEM 3 //////////
 
@@ -74,10 +101,44 @@
 
   Call your new class ProgressiveManager
 */
-
-//Code Here
-
-
+class ProgressiveManager {
+  constructor(first_name, last_name, email, age) {
+    this.age = age;
+    this.email = email;
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.reports = [];
+    this.title = "Not a manager";
+    this.status = 0;
+    this.bonus = 0;
+  }
+  hire(newEmp) {
+    this.reports.push(newEmp);
+    this.status += 1;
+    if (this.status === 0) {
+      this.title = "Not a manager";
+    }
+    if (this.status >= 1 && this.status <= 3) {
+      this.title = "Barely Manager";
+    }
+    if (this.status >= 4 && this.status <= 10) {
+      this.title = "Mostly Manager";
+    }
+    if (this.status >= 11 && this.status <= 50) {
+      this.title = "Manager";
+    }
+    if (this.status >= 51 && this.status <= 100) {
+      this.title = "Manager Plus";
+    }
+    if (this.status >= 101) {
+      this.title = "Bestest Manager";
+    }
+  }
+  fire(i) {
+    this.reports.splice(i, 1);
+    this.bonus += 100;
+  }
+}
 
 ////////// PROBLEM 4 - Black Diamond //////////
 
@@ -102,6 +163,23 @@
         - It should set decrease wear_and_tear_count by 10, and set needs_reboot to false
 */
 
-//Code Here
+class Machine {
+  constructor() {
+    this.widgets_made_count = 0;
+    this.wear_and_tear_count = 0;
+    this.needs_reboot = false;
+  }
 
-
+  makeWidgets(nn) {
+    this.widgets_made_count += nn;
+    this.wear_and_tear_count = this.widgets_made_count / 50;
+  }
+  fixMachine() {
+    this.needs_reboot = true;
+  }
+  reboot() {
+    this.wear_and_tear_count -= 10;
+    this.needs_reboot = false;
+    return function rebootComplete() {};
+  }
+}

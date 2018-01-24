@@ -10,20 +10,18 @@
 
 // Do not edit the code below.
 var carDetails = {
-  color: 'red',
-  make: 'toyota',
-  model: 'tacoma',
+  color: "red",
+  make: "toyota",
+  model: "tacoma",
   year: 1994
-}
+};
 // Do not edit the code above.
 
 /*
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
-
-
+var { color, make, model, year } = carDetails;
 
 ////////// PROBLEM 2 //////////
 
@@ -33,15 +31,13 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+function greeting(obj) {
   //Code Here
-  
+
   // Do not edit the code below.
-  return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
+  return "Hello, " + title + " " + firstName + " " + lastName + "!";
   // Do not edit the code above.
 }
-
-
 
 ////////// PROBLEM 3 //////////
 
@@ -55,8 +51,6 @@ function greeting( obj ) {
 
 //Code Here
 
-
-
 ////////// PROBLEM 4 //////////
 
 /*
@@ -68,8 +62,6 @@ function greeting( obj ) {
 */
 
 //Code Here
-
-
 
 ////////// PROBLEM 5 //////////
 
@@ -87,8 +79,6 @@ function greeting( obj ) {
 
 //Code Here
 
-
-
 ////////// PROBLEM 6 //////////
 
 /*
@@ -98,5 +88,3 @@ function greeting( obj ) {
 */
 
 //Code Here
-
-
