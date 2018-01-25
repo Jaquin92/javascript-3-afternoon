@@ -32,7 +32,7 @@ var { color, make, model, year } = carDetails;
 */
 
 function greeting(obj) {
-  //Code Here
+  var { firstName, lastName, title } = obj;
 
   // Do not edit the code below.
   return "Hello, " + title + " " + firstName + " " + lastName + "!";
@@ -49,7 +49,11 @@ function greeting(obj) {
   Sum up the values and return the total number.
 */
 
-//Code Here
+let totalPopulation = obj => {
+  var { utah, california, texas, arizona } = obj;
+
+  return utah + california + texas + arizona;
+};
 
 ////////// PROBLEM 4 //////////
 
@@ -60,6 +64,15 @@ function greeting(obj) {
   Use object destructuring to save the property values to new variables. 
   Push these new variables to an array and return the array. 
 */
+
+let ingredients = obj => {
+  var { carb, fat, protein } = obj;
+
+  var newarr = [];
+  newarr.push(carb, fat, protein);
+
+  return newarr;
+};
 
 //Code Here
 
@@ -79,6 +92,17 @@ function greeting(obj) {
 
 //Code Here
 
+let largeNumbers = ({ first, second, third }) => {
+  if (first < second && first < third) {
+    return first;
+  }
+  if (second < first && second < third) {
+    return second;
+  } else {
+    return third;
+  }
+};
+
 ////////// PROBLEM 6 //////////
 
 /*
@@ -88,3 +112,14 @@ function greeting(obj) {
 */
 
 //Code Here
+
+let numberGroups = ({ a, b, c }) => {
+  var least = Math.max(a.length, b.length, c.length);
+  if (least == a.length) {
+    return a;
+  }
+  if (least == b.length) {
+    return b;
+  }
+  return c;
+};

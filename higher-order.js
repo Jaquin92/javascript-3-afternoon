@@ -21,7 +21,7 @@ const mixedNumbers = [6, 3, 1, 7, 5, 2, 6, 8, 9, 4, 2, 7, 9, 3, 1, 8, 4, 3];
 */
 
 //Code Here
-let evenNumbers; // = mixedNumbers.filter(/* Provide Your Callback Here */)
+let evenNumbers = mixedNumbers.filter(key => key % 2 === 0);
 
 ////////// PROBLEM 2 //////////
 
@@ -42,7 +42,7 @@ const prices = [15.0, 23.0, 78.0, 34.0, 12.0, 86.0, 12.0, 79.0, 32.0];
 */
 
 //Code Here
-let postTaxPrices; // = prices.map(/* Provide Your Callback Here );
+let postTaxPrices = prices.map(key => key + key * 0.07);
 
 ////////// PROBLEM 3 //////////
 
@@ -59,7 +59,7 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 //Code Here
-let totalPopulation; //  = populations.reduce(/* Provide Your Callback Here */)
+let totalPopulation = populations.reduce((a, b) => a + b);
 
 ////////// PROBLEM 4 //////////
 
@@ -101,7 +101,9 @@ const monstersInYourPocket = [
 */
 
 //Code Here
-let myStrongest; // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+let myStrongest = monstersInYourPocket.filter(key => {
+  return key.CP > 200;
+});
 
 ////////// PROBLEM 5 //////////
 
@@ -124,7 +126,9 @@ const orders = [
   Use a high order method to get an Array of all the order totals
 */
 
-let ordersTotal; //Code Here
+let ordersTotal = orders.filter(key => {
+  return key.price + key.tax;
+});
 
 ////////// PROBLEM 6 //////////
 
@@ -157,4 +161,10 @@ const purchases = [
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal; //Code Here
+let bobsTotal = purchases.reduce((a, b) => {
+  if (b.owner === "Bob") {
+    return a + b.price;
+  } else {
+    return a;
+  }
+}, 0);
